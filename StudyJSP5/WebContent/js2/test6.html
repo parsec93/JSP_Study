@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location 
+// - history
+// - document - image,link,layer,..
+//            - form - text,password,textarea
+//                   - checkbox, radiobox
+//                   - select  - option
+
+//    window.document.forms[0].속성
+//    window.document.forms[0].메서드()
+//    window.document.fr0.속성
+//    window.document.fr0.메서드()
+
+function fun1() {
+	//속성
+	alert(document.forms[0].action);
+	alert(document.fr0.method);
+	alert(document.forms[0].name);
+	//메서드
+	//document.forms[0].submit();
+	document.fr0.reset();
+}
+function fun2() {
+	// 전송(요청)할 페이지 a.jsp 변경
+	document.forms[0].action="a.jsp";
+	// 전송방식 post 변경
+	document.fr0.method='post';
+	// 전송 submit
+	document.forms[0].submit();
+}
+function fun3() {
+	alert("submit버튼클릭");
+	return false;
+}
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test6.html</h1>
+<form action="b.jsp" name="fr0" method="get" onsubmit="return fun3()">
+아이디:<input type="text" name="id">
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="변경후전송" onclick="fun2()">
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+</form>
+</body>
+</html>
+
+
+
+

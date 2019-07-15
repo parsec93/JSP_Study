@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+// window - location 
+//        - history
+//        - document - image,link,layer,..
+//                   - form - text,password,textarea
+//                          - checkbox, radiobox
+//                          - select  - option
+
+// window 생략가능
+// window.location.속성(변수,특징)
+// window.location.메서드(함수,기능)
+
+//  location.href  URL주소 저장되어있는 변수, 하이퍼링크
+//  location.protocol  프로토콜저장되었는 변수
+//  location.hostname  서버주소
+//  location.port 포트번호
+//  location.host 서버주소+포트번호
+
+//  location.reload()  새로고침
+//  location.replace() 새로운 문서 불러옴
+function fun1() {
+	alert("URL주소 : "+location.href);
+	alert("프로토콜 : "+location.protocol);
+}
+function fun2() {
+	// href 변수 에 test1.html 저장
+	alert("test1.html이동");
+	location.href="test1.html";
+}
+function fun3() {
+	//새로고침
+	//location.reload();
+	// 새로운 문서 불러오기
+	location.replace("test1.html");
+}
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test2.html</h1>
+<input type="button" value="현페이지주소정보" onclick="fun1()">
+<input type="button" value="test1.html페이지로이동" onclick="fun2()">
+<input type="button" value="새로고침" onclick="fun3()">
+
+</body>
+</html>

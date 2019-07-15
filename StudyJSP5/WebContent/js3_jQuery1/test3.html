@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 대상.함수()
+		var c = $('h2').css('color');
+// 		alert(c);	
+		// h2태그 대상의 글자 색 green 변경
+		$('h2').css('color','green');
+		//배열변수
+		var col=["blue","red","yellow"];
+		$('h2').css('color',function(index){
+// 			alert(index); //h2대상의 순서값을 저장하는 변수
+// 			alert(col[index]);
+			return col[index];
+		});
+		//속성여러개 적용
+		$('h2').css('color','red').css('background','pink');
+		$('h2').css({
+			color:'blue',
+			background:'skyblue'
+		});
+		$('h2').css({
+			color:function(index){
+				return col[index];
+			},
+			background:'skyblue'
+		});
+	});
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery1/test3.html</h1>
+<h2>head-0</h2>
+<h2>head-1</h2>
+<h2>head-2</h2>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location 
+//   - history
+//   - document - image,link,layer,..
+//              - form - text,password,textarea
+//                     - checkbox, radiobox
+//                     - select  - option
+function fun1() {
+	alert("이미지클릭");
+// 	window.document.문서안 첫번째이미지.속성
+// 	window.document.images[0].속성
+// 	window.document.images[0].메서드()
+	
+// 	window.document.이미지이름.속성
+// 	window.document.im0.속성
+// 	window.document.im0.메서드()
+
+	alert(document.images[0].src);
+	alert(document.images[0].name);
+	alert(document.im0.width);
+	alert(document.images[0].height);
+	alert(document.images[0].border);
+}
+function fun2() {
+	//이미지 너비크기 500 변경 
+	document.im0.width=500;
+	document.images[0].height=400;
+	document.images[0].border=10;
+	document.images[0].src="2.jpg";
+}
+function fun3() {
+	//두번째 이미지를 클릭했을때  그림을 '3.jpg'변경 테두리두께 5변경
+	document.images[1].border=5;
+	document.im1.src="3.jpg";
+}
+// 마우스 오버했을때 3번째 이미지 5.jpg변경
+// 마우스 아웃했을대 3번째 이미지 4.jpg변경
+function fun4() {
+	document.images[2].src="5.jpg";
+}
+function fun5() {
+	document.im2.src="4.jpg";
+}
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test5.html</h1>
+<img src="1.jpg" name="im0" width="300" height="200" border="1"
+ onclick="fun1()">
+<input type="button" value="이미지변경" onclick="fun2()"> 
+<img src="2.jpg" name="im1" onclick="fun3()">
+<img src="4.jpg" name="im2" 
+   onmouseover="fun4()" onmouseout="fun5()">   
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 함수 : 자주사용하는 명령의 묶음 => 필요할때 묶음 이름 호출
+function fun() {
+	alert('첫번째메시지');
+	alert('두번째메시지');
+	alert('세번째메시지');
+	alert('네번째메시지');
+	alert('다섯번째메시지');
+	//함수호출하는 곳으로 되돌아감
+	return;
+}
+function fun2(a,b) {
+	alert(a+b);
+	alert(a-b);
+	alert(a*b);
+	alert(a/b);
+	//함수호출하는 곳으로 되돌아감
+	return;
+}
+function fun3() {
+	//함수호출하는 곳으로 결과값을 가지고 되돌아감
+	return "결과값";
+}
+function fun4(x) {
+	return x+10;
+}
+// 함수이름 호출
+// fun();
+</script>
+</head>
+<body>
+<h1>WebContent/js1/test3.html</h1>
+<input type="button" value="버튼" onclick="fun()">
+<input type="button" value="버튼2" onclick="fun2(10,20)">
+<input type="button" value="버튼3" onclick="alert(fun3())">
+<input type="button" value="버튼4" onclick="alert(fun4(10)*100)">
+</body>
+</html>
+
+
+
+
+
+

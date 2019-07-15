@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html title</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location 
+//     - history
+//     - document - image,link,layer,..
+//                - form - text,password,textarea
+//                       - checkbox, radiobox
+//                       - select  - option
+
+// document : 웹브라우저에서 html head body 내장객체
+// document.속성  document.title document.bgColor document.fgColor
+//              document.linkColor
+// document.메서드()  document.open() document.close()
+//                   document.write() document.writeln()
+
+function fun1() {
+	alert(document.title);
+	alert(document.bgColor); //  #ffff00  RGB
+}
+function fun2() {
+	// 배경색 "pink" 변경
+	document.bgColor="pink";
+}
+document.writeln("html문서 안에 내용 출력");
+function fun3(c) {
+	// radio 버튼에서 클릭한 색이 => 배경색 변경
+	document.bgColor=c;
+}
+</script>
+</head>
+<body bgcolor="yellow">
+<h1>WebContent/js2/test4.html</h1>
+<input type="button" value="html문서속성" onclick="fun1()">
+<input type="button" value="배경색변경" onclick="fun2()">
+<input type="radio" name="color" value="green" 
+             onclick="fun3('green')">green<br>
+<input type="radio" name="color" value="blue" 
+             onclick="fun3('blue')">blue<br>
+<input type="radio" name="color" value="red" 
+            onclick="fun3('red')">red<br>
+</body>
+</html>

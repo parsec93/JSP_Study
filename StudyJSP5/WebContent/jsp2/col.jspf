@@ -1,0 +1,6 @@
+<%
+//col.jspf
+String col1="yellow";
+String col2="blue";
+String col3="green";
+%>

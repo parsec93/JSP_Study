@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//대상.html() 
+		// h2태그 대상으로 태그안에 내용 가져오기
+		var h =$('h2').html();
+		//alert(h);	
+		// h2태그 대상으로 태그안에 내용 넣기
+// 		$('h2').html('<i>html</i>');
+// h2태그 대상으로 태그안에 내용 html-0  html-1 html-2넣기
+// 		$('h2').html(function(index) {
+// 			return "html-"+index;
+// 		});
+		$('h2').html(function(index,oldhtml) {
+			alert(index);  //0        //1         //2
+			alert(oldhtml); // head-0  //head-1   //head-2
+			// h2태그 안에 기존내용을 가져와서 head-0*추가
+			return oldhtml+"*";
+		});
+	});
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery1/test5.html</h1>
+<h2>head-0</h2>
+<h2>head-1</h2>
+<h2>head-2</h2>
+</body>
+</html>

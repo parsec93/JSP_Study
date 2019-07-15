@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// fun1() 함수 정의 => 인사말 메시지 출력
+function fun1() {
+	alert("안녕하세요");
+}
+// fun2() 함수 정의 => 3개의 수를 받아서 합을 구해서 출력
+function fun2(a,b,c) {
+	alert(a+b+c);
+}
+// fun3() 함수 정의 => 2개의 점수를 받아서 평균 구한값을 리턴(함수호출한곳으로 되돌림)
+function fun3(x,y) {
+	return (x+y)/2;
+}
+function fun4(a,b) {
+	return a+b;
+}
+</script>
+</head>
+<body>
+<h1>WebContent/js1/test4.html</h1>
+<input type="button" value="인사말출력" onclick="fun1()">
+<input type="button" value="숫자합출력" onclick="fun2(10,20,30)">
+<input type="button" value="평균구해서리턴" onclick="alert('리턴받아온평균:'+fun3(85,90))">
+<input type="button" value="합구해서리턴" 
+     onclick="alert('합을 리턴 받아 평균구하기:'+(fun4(85,90)/2))">
+
+</body>
+</html>
+

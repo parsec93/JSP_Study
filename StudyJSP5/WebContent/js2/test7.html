@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location 
+//       - history
+//       - document - image,link,layer,..
+//                  - form - text,password,textarea
+//                         - checkbox, radiobox
+//                         - select  - option
+
+//  document.폼이름.텍스트상자이름.속성
+//  document.폼이름.텍스트상자이름.메서드()
+function fun1() {
+	//속성
+	alert(document.fr.id.type);
+	alert(document.fr.id.name);
+	alert(document.fr.id.value);//텍스트 상자 안의 value값
+	//메서드
+	document.fr.id.focus();//포커스 깜박
+	document.fr.id.blur(); // 포커스 해제
+	document.fr.id.select(); //텍스트 상자 안의 value값 블럭 선택
+}
+function fun2() {
+	//alert(document.fr.id.value); 비어있는값 공백 ""
+	// 텍스트 상자 안의 value값 비어있으면
+	if(document.fr.id.value==""){
+		alert("아이디 입력하세요");
+		document.fr.id.focus();
+	}else if(document.fr.pass.value==""){
+		// 비밀번호 상자 안의 value값 비어있으면 메시지 포커스
+		alert("비밀번호 입력하세요");
+		document.fr.pass.focus();
+	}else if(document.fr.intro.value==""){
+		// 자기소개 상자 안의 value값 비어있으면 메시지 포커스
+		alert("자기소개 입력하세요");
+		document.fr.intro.focus();
+	}else{
+	// 텍스트 상자 안의 value값이 입력이 다되어 있으면 전송 submit
+	document.fr.submit();
+	}
+}
+function fun3() {
+// 	if(document.fr.id.value==""){
+//		alert("아이디 입력하세요");
+//		document.fr.id.focus();
+//		// 함수 호출한 곳으로 되돌아감
+//		return;
+//	}
+
+	//아이디 상자에 입력된 문자값의 길이가 0이냐
+	//alert("아이디 상자에 입력된 문자 개수 : "+document.fr.id.value.length);
+	
+	if(document.fr.id.value.length==0){
+		alert("아이디 입력하세요");
+		document.fr.id.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 아이디 상자에 입력된 문자의 길이가 4자 이면 정확하게 입력
+	//  4자가 아니면  "아이디는 4자입니다."  포커스 깜빡
+	if(document.fr.id.value.length!=4){
+		alert("아이디는 4자입력하세요");
+		document.fr.id.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+
+	if(document.fr.pass.value==""){
+		// 비밀번호 상자 안의 value값 비어있으면 메시지 포커스
+		alert("비밀번호 입력하세요");
+		document.fr.pass.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 비밀번호 길이가 4 ~ 7 자 입력 정확하게 입력
+	// 비밀번호 길이가 4보다 작거나  7보다 크거나 한 길이 이면 
+	// "비밀번호 길이 4~7 입력하세요" 포커스
+// 	if(document.fr.pass.value.length<4 || document.fr.pass.value.length>7){
+// 		alert("비밀번호 길이 4~7 입력하세요");
+// 		document.fr.pass.focus();
+// 		// 함수 호출한 곳으로 되돌아감
+// 		return;
+// 	}
+	if(!(document.fr.pass.value.length>=4 && document.fr.pass.value.length<=7)){
+		alert("비밀번호 길이 4~7 입력하세요");
+		document.fr.pass.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	
+	
+	if(document.fr.intro.value==""){
+		// 자기소개 상자 안의 value값 비어있으면 메시지 포커스
+		alert("자기소개 입력하세요");
+		document.fr.intro.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 텍스트 상자 안의 value값이 입력이 다되어 있으면 전송 submit
+	document.fr.submit();
+	return;
+}
+function fun4() {
+	// 텍스트 상자 안의 value값 비어있으면  메시지 포커스
+	if(document.fr.id.value==""){
+		alert("아이디 입력하세요");
+		document.fr.id.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return false;
+	}
+	// 비밀번호 상자 안의 value값 비어있으면  메시지 포커스
+	if(document.fr.pass.value==""){
+		// 비밀번호 상자 안의 value값 비어있으면 메시지 포커스
+		alert("비밀번호 입력하세요");
+		document.fr.pass.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return false;
+	}
+	// 자기소개 상자 안의 value값 비어있으면  메시지 포커스
+	if(document.fr.intro.value==""){
+		// 자기소개 상자 안의 value값 비어있으면 메시지 포커스
+		alert("자기소개 입력하세요");
+		document.fr.intro.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return false;
+	}	
+// 텍스트 상자 안의 value값이 입력이 다되어 있으면 전송 submit
+return;
+}
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test7.html</h1>
+<form action="a.jsp" name="fr" method="get" onsubmit="return fun4()">
+아이디:<input type="text" name="id"><br>
+비밀번호:<input type="password" name="pass"><br>
+자기소개:
+<textarea name="intro" rows="10" cols="20"></textarea><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="텍스트상자제어 버튼1" onclick="fun2()">
+<input type="button" value="텍스트상자제어 버튼2" onclick="fun3()">
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+</form>
+</body>
+</html>
