@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 파라미터값 전달 name:홍길동, age:250	
+		// string2.jsp 출력화면 가져오기
+		$.ajax('string2.jsp', {
+			data:{name :'홍길동', age:250},
+			success : function(data){
+				$('body').append(data);	
+			}
+		});
+		
+		$('#btn').click(function(){
+			$.ajax('string2.jsp', {
+				data:{name :'홍길동', age:250},
+				success:function(data){
+					$('table').append("<tr><td>"+data+"</td></tr>");
+				}
+			});
+// 			$(this).unbind();
+		});
+	
+	
+	
+	});
+
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery2/string2.html</h1>
+<input type="button" value="버튼" id="btn">
+<table border="1">
+<tr><td>이름, 나이</td></tr>
+</table>
+</body>
+</html>

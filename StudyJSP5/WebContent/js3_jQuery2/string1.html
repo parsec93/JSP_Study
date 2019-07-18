@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.ajax('string1.jsp', {
+		success:function(data){
+			$('body').append(data);
+		}
+// 		success:function
+	});
+	// btn 버튼을 클릭하면
+	// string1.jsp 가서 출력한 내용 가져오기. => table 뒷부분에 추가 출력
+	$('#btn').click(function(){
+		$.ajax('string1.jsp', {
+			success:function(data){
+				$('table').append("<tr><td>"+data+"</td></tr>");
+			}
+		});
+	});
+	
+});
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery2/string1.html</h1>
+<input type="button" value="버튼" id="btn">
+<table border="1">
+<tr><td>string1.jsp 에서 가져온 내용.</td></tr>
+</table>
+</body>
+</html>

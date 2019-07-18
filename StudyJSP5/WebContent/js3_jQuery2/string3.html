@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 중복체크 버튼을 클릭했을때 
+		// id상이 비어있으면 제어
+		// id value값을 string3.jsp 전달 
+		// string3.jsp에서 받은 결과값을 div태그에 넣기 .html()
+		$('#btn').click(function() {
+			if($('#id').val()==""){
+	 			   alert("아이디입력하세요");
+	 			  $('#id').focus();
+	 			  return;
+	 		 }
+			$.ajax('string3.jsp',{
+				data:{id:$('#id').val()},
+				success : function(data) {
+					$('div').html(data);
+				}
+			});
+		});
+		
+	});
+	</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery2/string3.html</h1>
+<input type="text" name="id" id="id">
+<input type="button" value="중복체크" id="btn">
+<div></div>
+</body>
+</html>
