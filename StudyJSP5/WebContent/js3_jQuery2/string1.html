@@ -6,11 +6,11 @@
 <script src="../js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	// string1.jsp 출력화면 가져오기
 	$.ajax('string1.jsp', {
 		success:function(data){
 			$('body').append(data);
 		}
-// 		success:function
 	});
 	// btn 버튼을 클릭하면
 	// string1.jsp 가서 출력한 내용 가져오기. => table 뒷부분에 추가 출력
@@ -20,6 +20,8 @@ $(document).ready(function(){
 				$('table').append("<tr><td>"+data+"</td></tr>");
 			}
 		});
+		// 이벤트해제
+		$(this).unbind();
 	});
 	
 });

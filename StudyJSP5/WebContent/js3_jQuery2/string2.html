@@ -6,7 +6,7 @@
 <script src="../js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		// 파라미터값 전달 name:홍길동, age:250	
+		// 파라미터값 전달 name:홍길동, age:21
 		// string2.jsp 출력화면 가져오기
 		$.ajax('string2.jsp', {
 			data:{name :'홍길동', age:250},
@@ -17,12 +17,11 @@
 		
 		$('#btn').click(function(){
 			$.ajax('string2.jsp', {
-				data:{name :'홍길동', age:250},
+				data:{name :'이순신', age:15},
 				success:function(data){
 					$('table').append("<tr><td>"+data+"</td></tr>");
 				}
 			});
-// 			$(this).unbind();
 		});
 	
 	
