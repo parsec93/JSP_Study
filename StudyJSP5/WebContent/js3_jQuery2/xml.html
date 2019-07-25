@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax('xml.jsp',{
+			success:function(data){
+				$(data).find('person').each(function(){
+					var id=$(this).find('id').text();
+					var pass=$(this).find('pass').text();
+					var name=$(this).find('name').text();
+					// body태그 뒤부분에 id,pass,name 추가 
+					$('body').append(id+","+pass+","+name+"<br>");
+				});
+			}
+		});
+		//버튼 클릭하면 테이블 태그에 추가
+		$('#btn').click(function(){
+			$.ajax('xml.jsp',{
+				success:function(data){
+					$(data).find('person').each(function(){
+						var id=$(this).find('id').text();
+						var pass=$(this).find('pass').text();
+						var name=$(this).find('name').text();
+						$('table').append("<tr><td>"+id+"</td><td>"+pass+"</td><td>"+name+"</td></tr>");
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery2/xml.html</h1>
+<input type="button" value="버튼" id="btn">
+<table border="1">
+<tr><td>id</td><td>pass</td><td>name</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.getJSON('json1.jsp',function(data){
+			// data 변수 <= json1.jsp 배열형태 데이터 저장
+			// each()  data변수  body태그 뒤부분에 id,pass,name 추가 
+			$.each(data,function(index,item){
+				$('body').append(item.id+","+item.pass+","+item.name+"<br>");
+			});
+		});
+		// btn버튼 클릭시 table태그에 추가
+		$('#btn').click(function(){
+			$.getJSON('json1.jsp',function(data){
+				$.each(data,function(index,item){
+					$('table').append("<tr><td>"+item.id+"</td><td>"+item.pass+"</td><td>"+item.name+"</td></tr>");
+				});
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<h1>WebContent/js3_jQuery2/json1.html</h1>
+<input type="button" value="버튼" id="btn">
+<table border="1">
+<tr><td>id</td><td>pass</td><td>name</td></tr>
+</table>
+</body>
+</html>
+
